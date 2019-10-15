@@ -12,7 +12,25 @@ import List from './pages/List'
 import News from './pages/News'
 import My from './pages/My'
 
+//引入封装的获取定位的方法
+import {getLocalCity} from './utils/map'
+// 引入store
+import store  from './store'
+import {mapCityName} from './store/actionCreator'
+
+
+
 export default class App extends Component {
+  componentDidMount(){
+
+    //获取城市定位
+     getLocalCity()
+    .then((res)=>{
+      // console.log(res.name)
+      // 派发dispatch  修改store的数据
+      store.dispatch(mapCityName(res.name==='全国'? '北京' : res.name))
+    })
+  }
   render() {
     return (
       <div>

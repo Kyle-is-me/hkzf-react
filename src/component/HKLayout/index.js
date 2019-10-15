@@ -4,6 +4,8 @@ import { TabBar } from 'antd-mobile';
 
 import {withRouter} from 'react-router-dom'
 
+
+
 class HKLayout extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +17,7 @@ class HKLayout extends Component {
   
   
   render() {
-    console.log(withRouter)
+  
     return (
       <div style={ { position: 'fixed', height: '100%', width: '100%', top: 0 } }>
         <TabBar
@@ -25,8 +27,8 @@ class HKLayout extends Component {
         
         >
           <TabBar.Item
-            title="Life"
-            key="Life"
+            title="首页"
+            key="Home"
             icon={<div style={{
               width: '22px',
               height: '22px',
@@ -42,7 +44,7 @@ class HKLayout extends Component {
             />
             }
             selected={this.props.location.pathname === '/'}
-            badge={1}
+            
             onPress={() => {
              this.props.history.push('/')
             }}
@@ -67,9 +69,9 @@ class HKLayout extends Component {
               }}
               />
             }
-            title="Koubei"
-            key="Koubei"
-            badge={'new'}
+            title="找房"
+            key="Find"
+            
             selected={this.props.location.pathname === '/list'}
             onPress={() => {
               this.props.history.push('/list')
@@ -95,9 +97,9 @@ class HKLayout extends Component {
               }}
               />
             }
-            title="Friend"
-            key="Friend"
-            dot
+            title="资讯"
+            key="News"
+        
             selected={this.props.location.pathname === '/news'}
             onPress={() => {
              this.props.history.push('/news')
@@ -108,7 +110,7 @@ class HKLayout extends Component {
           <TabBar.Item
             icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
             selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
-            title="My"
+            title="我的"
             key="my"
             selected={this.props.location.pathname === '/my'}
             onPress={() => {

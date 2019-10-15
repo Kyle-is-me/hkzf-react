@@ -1,0 +1,50 @@
+
+// 搜索框开始
+
+.search_bar{
+    display: flex;
+    
+    .search_input{
+        display: flex;
+        font-size: 13px;      
+        flex:1;
+        border-radius: 5px;
+        background-color: #fff;
+        display: flex;
+        padding: 10px;
+        .city_name{
+            width: 60px;
+            border-right: 1px solid #ccc;
+        }
+
+        .search_location{
+            flex:1;
+            color: #ccc;
+            display: flex;
+            align-items: center;
+            padding-left: 15px;
+            i{
+
+            }
+            span{
+               margin-left: 10px; 
+            }
+        }
+    }
+
+    .search_map{
+        width: 40px;
+        color:white;
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        i{
+            color: white;
+            font-size: 22px;
+        }
+    }
+}
+
+
+
+// 搜索框结束

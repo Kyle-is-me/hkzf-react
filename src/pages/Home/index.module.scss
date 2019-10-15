@@ -1,0 +1,144 @@
+
+ // 首页样式
+// 轮播图开始
+.index_carousel{
+    position: relative;
+    .index_search{
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        width: 95%;
+    }
+}
+
+// 轮播图结束
+
+// 导航开始 */
+.navbar{
+    background-color: white;
+    
+    display: flex;
+    .navbar_item{
+        flex:1;
+        text-align: center;
+        padding: 10px 0;
+        .nav_img_wrap{
+            img{
+                width: 50%;
+            }
+        }
+        .nav_text{
+
+        }
+    }
+    
+}
+/* // 导航结束 */
+
+// 租房小组
+.rend_team{
+    padding: 0 10px ;
+    background-color: #f6f5f6;
+    .rend_team_title{
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+        span{
+            &:first-child{
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+    }
+    .rend_team_content{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .rend_team_item{
+            width: 49%;
+            margin-bottom: 10px;
+            background-color: #fff;
+            display: flex;
+            padding: 15px 0;
+            .rend_item_info{
+                flex:2;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                .item_info_name{
+                    font-size: 15px;
+                    font-weight: 600;
+                }
+                .item_info_desc{
+                    font-size: 13px;
+                    color: #ccc;
+                }
+            }
+            .rend_item_img_wrap{
+                flex:1;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+//租房小组结束
+
+
+// 最新资讯开始
+.current_news{
+    padding: 0 10px;
+    background-color: #fff;
+    .news_title{
+        padding: 15px 0 5px;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .news_content{
+        .news_item{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+
+            &:last-child{
+                border-bottom: none;
+            }
+            .news_item_img_wrap{
+                flex:3;
+                
+                img{
+                    width: 95%;
+                }
+            }
+
+            .news_item_info{
+                flex:4;
+                padding: 0 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .news_item_desc{
+                    font-size: 14px;
+                    font-weight: 600;
+                    overflow: hidden;
+                    flex-wrap: nowrap;
+                }
+
+                .news_item_tool{
+                    display: flex;
+                    justify-content: space-between;
+                    span{
+                        font-size: 13px;
+                        color:#bbb;
+                    }
+                }
+            }
+        }
+    }
+}
+// 最新资讯结束
