@@ -3,7 +3,9 @@ import searchCss from './index.module.scss'
 // 引入redux仓库
 import store from '../../store'
 
-export default class index extends Component {
+import {withRouter} from 'react-router-dom'
+
+ class index extends Component {
     state={
         cityName:''
     }
@@ -11,26 +13,29 @@ export default class index extends Component {
         super()
         // console.log(store.getState())
         // 可能由bug =》异步代码和同步的关系
-        // this.state.cityName = store.getState().cityName
+        // this.setState({
+        //     cityName:store.getState().cityName
+        // })
+        this.state.cityName = store.getState().cityName
         // 开启一个订阅
         store.subscribe(()=>{
             // 这个代码会在store发生修改的时候触发
-            console.log(store.getState())
-           this.setState({
-               cityName:store.getState()
-           }) 
-            
+            // console.log(store.getState())
+        //    this.setState({
+        //        cityName:store.getState().cityName
+        //    }) 
+           this.state.cityName = store.getState().cityName
         })
     }
 
     render() {
-        
+      
         return (
             <div>
                 <div className={searchCss.search_bar}>
                     <div className={searchCss.search_input}>
-                        <div className={searchCss.city_name}>
-                            <span>{this.state.cityName}</span>
+                        <div className={searchCss.city_name} onClick={()=>this.props.history.push('/citylist')}>
+                            <span>{this.state.cityName===''?'获取中':this.state.cityName}</span>
                             <i className="iconfont icon-arrow"></i>
                         </div>
                         <div className={searchCss.search_location}>
@@ -46,3 +51,5 @@ export default class index extends Component {
         )
     }
 }
+
+export default withRouter(index)

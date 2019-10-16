@@ -58,6 +58,7 @@ export default class index extends Component {
             })
     }
     render() {
+        
         return (
             <div>
                 {/* 首页轮播图开始 */}

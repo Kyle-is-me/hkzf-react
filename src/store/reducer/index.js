@@ -6,8 +6,8 @@ import  {combineReducers} from 'redux'
 
 // 引入其他管理员
 import mapReducer from './mapReducer'
-
+import suibian from './suibian'
 
 // 合并管理员
 
-export default combineReducers({mapReducer})
+export default combineReducers({mapReducer,suibian})

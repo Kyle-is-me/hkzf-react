@@ -9,12 +9,14 @@ let defaultValue = {
 //暴露函数
 export default  (state=defaultValue,action)=>{
     let newState = JSON.parse(JSON.stringify(state))
+ 
     switch(action.type){
         case MAP_CITY_NAME_SET:
-        return newState.cityName = action.value
-        break
+         newState.cityName = action.value
+            break
         default:
-            return state
-    }
-    return newState
+             break
+        }
+        return newState
 }
+
