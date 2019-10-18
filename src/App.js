@@ -12,6 +12,7 @@ import List from './pages/List'
 import News from './pages/News'
 import My from './pages/My'
 import CityList from './pages/cityList'
+import Map from './pages/Map'
 
 //引入封装的获取定位的方法
 import {getLocalCity} from './utils/map'
@@ -23,7 +24,7 @@ import {mapCityName} from './store/actionCreator'
 
 export default class App extends Component {
   componentDidMount(){
-
+  
     //获取城市定位
      getLocalCity()
     .then((res)=>{
@@ -41,6 +42,7 @@ export default class App extends Component {
           <Route render={()=><HKLayout ><News/></HKLayout>} exact path="/news"/>
           <Route render={()=><HKLayout ><My/></HKLayout>} exact path="/my"/>
           <Route component={CityList} path="/citylist"/>
+          <Route component={Map} path="/map"/>
         </Router>
       </div>
     )

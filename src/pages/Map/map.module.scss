@@ -1,0 +1,26 @@
+
+
+.allmap{
+    height: calc(100vh - 45px);
+
+    .house_box{
+        
+        background-color: #22b86e;
+        color: white;        
+        font-size: 13px;
+        border:1px solid #fff;
+    }
+
+    .circle{
+        width: 60px;
+        height: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+    .rect{
+        padding: 3px;
+    }
+}

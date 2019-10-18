@@ -26,11 +26,6 @@ import indexCss from './index.module.scss'
 */
 // List data as an array of strings
 
-
-
-
-
-
 export default class index extends Component {
     state = {
         // 界面要显示的城市数组
@@ -46,14 +41,14 @@ export default class index extends Component {
         this.MainListRef = React.createRef()
 
         // 1.获取当前城市
-        let cityName = store.getState().cityName
+        let cityName = store.getState().mapReducer.cityName
         if (cityName) {
             // redux中已经存在值，说明从首页打开
             // console.log(cityName)
             this.getAllCity(cityName)
         } else {
             store.subscribe(() => {
-                cityName = store.getState().cityName
+                cityName = store.getState().mapReducer.cityName
                 this.getAllCity(cityName)
             })
         }
@@ -146,7 +141,7 @@ export default class index extends Component {
         return (item[keyList].length+1)*40
     }
 
-    //右侧滚动到事件
+    //左侧列表滚动后触发的事件
     onRowsRendered=({  startIndex })=>{
         if(this.state.currentIndex !== startIndex){
             this.setState({
@@ -155,7 +150,7 @@ export default class index extends Component {
         }
     }
 
-    // 右侧鼠标点击事件，传递索引
+    // 右侧字母栏鼠标点击事件，传递索引
     handleClick=(index)=>{
        
         this.setState({
